@@ -1,11 +1,11 @@
 services:
   # php
-  application:
+  app_php:
     build:
       context: .
       dockerfile: dockerfiles/php/Dockerfile
-    image: application
-    container_name: application
+    image: app_php
+    container_name: app_php
     tty: true
     ports:
       - "9000:9000"
