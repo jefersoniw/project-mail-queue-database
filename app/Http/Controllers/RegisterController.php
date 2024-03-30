@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\UserRegistered;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,6 @@ class RegisterController extends Controller
 
         UserRegistered::dispatch($user);
 
-        return \response()->json($user);
+        return new UserResource($user);
     }
 }
